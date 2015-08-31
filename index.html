@@ -1,0 +1,73 @@
+﻿<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8"/>
+		<meta name="viewport" content="width=device-width, initial-scale=1"/>
+		<meta name="description" content="Adivina donde cae"/>
+        <meta name="keywords" content=""/>
+		<title>Adivina donde cae</title>
+		<link rel="stylesheet" href="css/style.min.css"/>
+		<script src="js/donde_caera.min.js"></script>
+	</head>
+	<body>
+		<div id="main">
+			<div id="nav">
+				<div id="new">
+					<span>New</span>
+				</div>
+				<div id="temporizador">--:--</div>
+				<div id="dificultad">
+					<form name="nivel">
+						<div class="niveles">
+							<div id="facil"></div><input type="radio" value="facil" name="elegir_dificultad"/>
+						</div>
+						<div class="niveles">
+							<div id="medio"></div><input type="radio" value="medio" checked="checked" name="elegir_dificultad"/>
+						</div>
+						<div class="niveles">
+							<div id="dificil"></div><input type="radio" value="dificil" name="elegir_dificultad"/>
+						</div>
+					</form>
+				</div>
+			</div>
+			<div id="section">
+				<div id="overlay_pantalla" class="overlay"></div>
+				<div id="ingresaUsuario" class="dialogModal">
+					<span>¡¡¡Nuevo Record!!!</span><br><br>
+					<span>Ingresa tu nombre:</span>
+					<input id='obtenerUsuario' type='text' maxlength="25" value=''/>
+				</div>
+				<div id="pregunta">
+					<p>¿Dónde caerá el círculo color <span> </span>?</p>
+				</div>
+				<div id="tiempo_para_elegir">--</div>
+				<div id="juego">
+					<div id="overlay_juego" class="overlay">
+						<span>Presiona new para iniciar un juego</span>
+					</div>
+					<div id="area_juego"></div>
+					<div id="area_opciones"></div>
+					<div id="correcto_incorrecto"> </div>
+				</div>
+				<div id="puntaje_parcial">0</div>
+			</div>
+			<div id="aside">
+				<div id="records">
+					<table>
+						<caption>Records</caption>
+						<thead>
+							<tr>
+								<th>Jugador</th>
+								<th>Puntos</th>
+							</tr>
+						</thead>
+						<tbody></tbody>
+					</table>
+				</div>
+			</div>
+			<div id="footer">
+				
+			</div>
+		</div>
+	</body>
+</html>
