@@ -1,5 +1,5 @@
 ﻿/* donde_caera v1.0.0
-@autor: Julio Cesar, jc.paredes.hdz@gmail.com
+@autor: Julio Cesar Paredes Hernandez, jc.paredes.hdz@gmail.com
 https://github.com/JulioCesarParedes/donde_caera
 */
 
@@ -833,10 +833,10 @@ function Record(){
 		return eval('('+cadena+')');
 	};
 	this.getRecords=function(){
-		if(!localStorage.getItem('recordsAdivinaDondeCae')){
-			localStorage.setItem('recordsAdivinaDondeCae',this.aTexto(this.indefinido));
+		if(!localStorage.getItem('recordsDondeCaera')){
+			localStorage.setItem('recordsDondeCaera',this.aTexto(this.indefinido));
 		}
-		return this.aObjeto(localStorage.getItem("recordsAdivinaDondeCae"));
+		return this.aObjeto(localStorage.getItem("recordsDondeCaera"));
 	};
 	var isValido=function(){};
 	this.records=this.getRecords();
@@ -865,7 +865,7 @@ function Record(){
 			if (isNaN(this.records.juego[dificultad].puntos[i])){
 				this.records.juego[dificultad].puntos[i] = newScore;
 				this.records.juego[dificultad].usuario[i] = newName;
-				localStorage.setItem('recordsAdivinaDondeCae',this.aTexto(this.records));
+				localStorage.setItem('recordsDondeCaera',this.aTexto(this.records));
 				break;
 			}
 			else if(parseInt(this.records.juego[dificultad].puntos[i]) < parseInt(newScore) || (parseInt(this.records.juego[dificultad].puntos[i]) == parseInt(newScore) && j > 0)){
@@ -876,7 +876,7 @@ function Record(){
 				this.records.juego[dificultad].usuario[i] = newName;
 				newScore = tempTiempo;
 				newName = tempNombre;
-				localStorage.setItem('recordsAdivinaDondeCae',this.aTexto(this.records));
+				localStorage.setItem('recordsDondeCaera',this.aTexto(this.records));
 			}
 		}
 	};
