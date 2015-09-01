@@ -1,4 +1,9 @@
-﻿nivel = {
+﻿/* donde_caera v1.0.0
+@autor: Julio Cesar, jc.paredes.hdz@gmail.com
+https://github.com/JulioCesarParedes/donde_caera
+*/
+
+nivel = {
 	facil:{
 		columnas:3,
 		filas:6,
