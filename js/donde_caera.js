@@ -613,102 +613,38 @@ function Temporizador(nodo,aviso,getTiempoLimite,getFormato){//aviso es una func
 };
 
 function PuntajeParcial(){
-	var aciertosConsecutivos=0;
-	var erroresConsecutivos=0;
-	var puntos=0;
-	this.getPuntos=function(){
+	var aciertosConsecutivos = 0;
+	var erroresConsecutivos = 0;
+	var puntos = 0;
+	var aumentar = new Array(25,30,40,55,75,100);
+	var disminuir = new Array(10,12,16,22,30,40);
+	this.getPuntos = function(){
 		return puntos;
 	};
-	this.restablecer=function(){
-		aciertosConsecutivos=0;
-		erroresConsecutivos=0;
-		puntos=0;
+	this.restablecer = function(){
+		aciertosConsecutivos = 0;
+		erroresConsecutivos = 0;
+		puntos = 0;
 	};
-	this.getAciertosConsecutivos=function(){
+	this.getAciertosConsecutivos = function(){
 		return aciertosConsecutivos;
 	};
-	var noNegativo=function(puntos){
+	var noNegativo = function(puntos){
 		return (puntos < 0) ? 0 : puntos;
 	};
-	this.calcular=function(acierto){
+	this.calcular = function(acierto){
 		if(acierto){
-			erroresConsecutivos=0;
-			switch(aciertosConsecutivos){
-				case 0:
-					aciertosConsecutivos++;
-					puntos+=25;
-					return puntos;
-					break;
-				case 1:
-					aciertosConsecutivos++;
-					puntos+=30;
-					return puntos;
-					break;
-				case 2:
-					aciertosConsecutivos++;
-					puntos+=40;
-					return puntos;
-					break;
-				case 3:
-					aciertosConsecutivos++;
-					puntos+=55;
-					return puntos;
-					break;
-				case 4:
-					aciertosConsecutivos++;
-					puntos+=75;
-					return puntos;
-					break;
-				case 5:
-					puntos+=100;
-					return puntos;
-					break;
-				default:
-					break;
-			}
+			erroresConsecutivos = 0;
+			puntos += aumentar[aciertosConsecutivos];
+			aciertosConsecutivos++;
 		}
 		else{
-			aciertosConsecutivos=0;
-			switch(erroresConsecutivos){
-				case 0:
-					erroresConsecutivos++;
-					puntos-=10;
-					puntos = noNegativo(puntos);
-					return puntos;
-					break;
-				case 1:
-					erroresConsecutivos++;
-					puntos-=12;
-					puntos = noNegativo(puntos);
-					return puntos;
-					break;
-				case 2:
-					erroresConsecutivos++;
-					puntos-=16;
-					puntos = noNegativo(puntos);
-					return puntos;
-					break;
-				case 3:
-					erroresConsecutivos++;
-					puntos-=22;
-					puntos = noNegativo(puntos);
-					return puntos;
-					break;
-				case 4:
-					erroresConsecutivos++;
-					puntos-=30;
-					puntos = noNegativo(puntos);
-					return puntos;
-					break;
-				case 5:
-					puntos-=40;
-					puntos = noNegativo(puntos);
-					return puntos;
-					break;
-				default:
-					break;
-			}
+			aciertosConsecutivos = 0;
+			puntos -= disminuir[erroresConsecutivos];
+			puntos = noNegativo(puntos);
+			erroresConsecutivos++;
 		}
+		return puntos;
 	};
 };
 
