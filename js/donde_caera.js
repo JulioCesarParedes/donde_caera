@@ -55,10 +55,10 @@ function Juego(){
 	var bloque;
 	var retardo_nuevo_tablero;
 	var Correcto = function(){
-		nodo.correcto_incorrecto.setAttribute("name","Correcto");
+		nodo.correcto_incorrecto.setAttribute("class","Correcto");
 	};
 	var Incorrecto = function(){
-		nodo.correcto_incorrecto.setAttribute("name","Incorrecto");
+		nodo.correcto_incorrecto.setAttribute("class","Incorrecto");
 	};
 	var ocultar_correcto_incorrecto = function(){
 		nodo.correcto_incorrecto.style.display = 'none';

@@ -331,12 +331,12 @@ font: bold 60px Cambria;
 display: none;
 }
 
-[name = "Correcto"]:before{
+.Correcto:before{
 color: #096807;
 content: "\2714";
 }
 
-[name = "Incorrecto"]:before{
+.Incorrecto:before{
 color: #FF0000;
 content: "\2718";
 }
